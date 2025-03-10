@@ -1,4 +1,3 @@
-// Función para abrir el formulario
 function openForm() {
     document.getElementById("form-container").style.display = "block";
 }
