@@ -1,0 +1,105 @@
+body{
+    display: flex;
+    justify-content:center;
+    
+    min-height: 100vh;
+    background: url(https://www.colores.org.es/imagenes_colores/verde-verones.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+
+.wrapper{
+    width: 350px;
+    height: 790px;
+    background: transparent;
+    border:50px solid rgba(0, 0, 0, 0.2);
+    color: #000000;
+    backdrop-filter: blur(5px);
+    padding: 5px 40px; }
+
+  .wrapper h1{  
+    font-size: 50px;
+    text-align: center; }
+
+    .wrapper .input-box{ /*Tamaño y margen*/
+        position: relative;
+    width: 100%;
+        height: 25px;
+        margin: 10px 0;
+}
+
+      .input-box input{ 
+        width: 80%;
+        height: 50%;
+        background: transparent;
+        border: none;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, .2);
+        border-radius: 40px;
+        font-size: 16px;
+        color: #ffffff;
+        padding: 20px 45px 20px 20px;
+      }
+
+    .input-box input::placeholder{
+      color: #fff;
+    }
+
+  
+  .input-radio label {
+      color:#fff; 
+      margin-top: 10px;
+  }
+
+  .input-radio {
+    display: flex; 
+    margin-top: 15px;
+}
+.input-radio input[type="radio"] {
+  margin-right: 5px; /* Espacio entre el botón de opción y la etiqueta */
+  margin-top: 10px;
+}
+
+.wrapper .input-radio{ /*Tamaño y margen*/
+  width: 30%;
+  height: 40px;
+  margin: px 0;
+}
+
+    .input-box i{
+      position:relative;
+      right: 25px;
+      top: 30%;
+      transform: translate(-50%);
+      font-size: 20px;
+    
+    }
+
+    .wrapper .btn{
+        width: 100%;
+        height: 45px;
+        background: #fff;
+        border: none;
+        outline: none;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+        cursor: pointer;
+        font-size: 16px;
+        color: #333;
+        font-weight: 600;
+        margin-top: 40px;
+      }
+      .wrapper .login-link{
+        font-size: 14.5px;
+        text-align: center;
+        margin: 20px 0 15px;
+      
+      }
+      .login-link p a{
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .login-link p a:hover{
+        text-decoration: underline;
+      }

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>BinaryShop</title>
+    <link rel="stylesheet" href="../styles/stylepag.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <p class="logo">Binaryshop</p>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Buscar..." aria-label="Buscar">
+                <button class="search-button">Buscar</button>
+            </div>
+                <div class="menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke-width="1.5" 
+                    stroke="currentColor" 
+                    class="icon-barra" 
+                    style="vertical-align: middle; margin-left: 5px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <div class="menu-barra">
+                        <a href="administrador.html">Mi perfil</a>
+                        <a href="panel-usuarios.html">Gestionar usuarios</a>
+                        <a href="login.html">Cerrar sesión</a>
+
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="inicio">
+        <h1>Tu Tienda Online <br>De Confianza</h1>
+    </section>
+
+    <section id="Catalogo">
+        <div class="container">
+            <h2>Nuestros productos</h2>
+                <div id="contenedor-productos"></div>
+
+    <style>
+.contenedor-productos{
+    display: grid;
+    
+    
+    gap:80px;
+}
+    </style>
+
+    <style>
+    .producto { 
+    width: 100%; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    padding: 10px; 
+    font-family: sans-serif; 
+    max-width: 300px;
+    background-color: rgba(255, 255, 255, 0.719);
+    margin-top: 45px;
+    } 
+    </style>
+        
+        
+        
+        <script> 
+            const productos = [
+    {
+        nombre: "Eco-Cepillo Dental",
+        descripcion: "Cepillo de bambú biodegradable con cerdas de carbón activado.",
+        precio: 5.99,
+        cantidad: 100,
+        imagen: "https://frutosysemillas.com/cdn/shop/files/1.CepilloBambuCarbonActivado-6042_4ca2c919-e1b1-4437-8eb5-541804b7796e_720x.png?v=1707152764",
+    },
+    {
+        nombre: "Botella de Agua Auto-Limpiable",
+        descripcion: "Botella con luz UV integrada para purificar el agua.",
+        precio: 29.99,
+        cantidad: 50,
+        imagen: "https://m.media-amazon.com/images/I/41pcGXwijTL._AC_SL1080_.jpg",
+    },
+    {
+    nombre: "Pluma de Borrado Instantáneo",
+    descripcion: "Pluma que borra tinta con un solo clic, sin dejar rastro.",
+    precio: 9.99,
+    cantidad: 200,
+    imagen: "https://m.media-amazon.com/images/I/61XvVdcOBBL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Mochila Solar Cargadora",
+    descripcion: "Mochila con panel solar integrado para cargar dispositivos móviles.",
+    precio: 79.99,
+    cantidad: 25,
+    imagen: "https://www.luggagefactory.com/cdn/shop/products/product-image-850783141_1024x1024.jpg?v=1551985015",
+    },
+    {
+    nombre: "Audífonos de Traducción Simultánea",
+    descripcion: "Audífonos que traducen idiomas en tiempo real.",
+    precio: 149.99,
+    cantidad: 10,
+    imagen: "https://m.media-amazon.com/images/I/61M2-1GC5QL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Almohada de Masaje Inteligente",
+    descripcion: "Almohada que se adapta a tu cuerpo y proporciona masajes.",
+    precio: 69.99,
+    cantidad: 30,
+    imagen: "https://m.media-amazon.com/images/I/6187jJLC0DL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Lámpara de Escritorio con Carga Inalámbrica",
+    descripcion: "Lámpara que carga tu teléfono mientras ilumina tu espacio.",
+    precio: 49.99,
+    cantidad: 40,
+    imagen: "https://m.media-amazon.com/images/I/519LF6MOOwL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Guantes de Realidad Virtual Táctiles",
+    descripcion: "Guantes que te permiten sentir objetos en la realidad virtual.",
+    precio: 199.99,
+    cantidad: 5,
+    imagen: "http://www.saebo.com/cdn/shop/products/product-saebo-glove-01.jpg",
+    },
+    {
+    nombre: "Cámara de Seguridad con Reconocimiento Facial",
+    descripcion: "Cámara que identifica a las personas y envía alertas.",
+    precio: 89.99,
+    cantidad: 15,
+    imagen: "https://m.media-amazon.com/images/I/61+FM2XQUyL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Robot Aspirador con Mapeo Inteligente",
+    descripcion: "Aspirador que limpia tu casa de forma autónoma, creando mapas.",
+    precio: 249.99,
+    cantidad: 8,
+    imagen: "https://m.media-amazon.com/images/I/61Y5ANWmUIL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Bicicleta Eléctrica Plegable",
+    descripcion: "Bicicleta que se pliega para facilitar su transporte.",
+    precio: 599.99,
+    cantidad: 3,
+    imagen: "https://m.media-amazon.com/images/I/71ifBWcFl+L._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Reloj Inteligente con Monitor de Sueño",
+    descripcion: "Reloj que analiza tu sueño y te ayuda a mejorarlo.",
+    precio: 129.99,
+    cantidad: 20,
+    imagen: "https://m.media-amazon.com/images/I/71CqzwnhxwL._AC_UF894,1000_QL80_FMwebp_.jpg",
+    },
+    {
+    nombre: "Impresora 3D de Bolsillo",
+    descripcion: "Impresora que cabe en tu bolsillo y te permite imprimir objetos pequeños.",
+    precio: 349.99,
+    cantidad: 2,
+    imagen: "https://virtualmuebles.com/cdn/shop/files/71wm7EYD0ML._AC_SL1500_e9d33d19-65e5-4de4-a394-e9016e77f9d2.jpg?v=1740115114",
+    },
+    {
+    nombre: "Kit de Cultivo Hidropónico Casero",
+    descripcion: "Kit para cultivar tus propias hierbas y verduras en casa.",
+    precio: 59.99,
+    cantidad: 25,
+    imagen: "https://m.media-amazon.com/images/I/71cQz7YNA8L._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Drone con Cámara 4K y Estabilización",
+    descripcion: "Drone que graba videos y toma fotos de alta calidad.",
+    precio: 499.99,
+    cantidad: 6,
+    imagen: "https://m.media-amazon.com/images/I/51DD7xKnRxL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Proyector Holográfico Portátil",
+    descripcion: "Proyector que crea hologramas en cualquier superficie.",
+    precio: 299.99,
+    cantidad: 12,
+    imagen: "https://m.media-amazon.com/images/I/618klqnYCGL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Mesa de Escritorio Ajustable con Memoria",
+    descripcion: "Mesa que se ajusta a tu altura y guarda tus posiciones favoritas.",
+    precio: 399.99,
+    cantidad: 4,
+    imagen: "https://img.pccomponentes.com/articles/1086/10868710/1294-onkron-escritorio-elevable-con-motor-y-encimera-mesa-elevable-escritorio-140-cm-de-ancho-y-60-cm-de-profundidad-mesa-para-ordenador-carga-de-hasta-60-kg-mesa-elevable-electrica-wdt221e-b-negro.jpg",
+    },
+    {
+    nombre: "Silla Ergonómica con Calefacción",
+    descripcion: "Silla que se adapta a tu cuerpo y te mantiene caliente.",
+    precio: 279.99,
+    cantidad: 9,
+    imagen: "https://m.media-amazon.com/images/I/71Ckbc4sqoL._AC_UF894,1000_QL80_FMwebp_.jpg",
+    },
+    {
+    nombre: "Purificador de Aire con Aromaterapia",
+    descripcion: "Purificador que elimina las impurezas del aire y libera aromas.",
+    precio: 119.99,
+    cantidad: 18,
+    imagen: "https://m.media-amazon.com/images/I/410hEKPW8JL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Altavoz Inteligente con Pantalla Táctil",
+    descripcion: "Altavoz que te permite controlar tu hogar y ver videos.",
+    precio: 169.99,
+    cantidad: 11,
+    imagen: "https://m.media-amazon.com/images/I/51mZTrzrBqL._AC_UF1000,1000_QL80_FMwebp_.jpg",
+    },
+    {
+    nombre: "Gafas de Realidad Aumentada con GPS",
+    descripcion: "Gafas que te muestran información sobre el mundo real.",
+    precio: 229.99,
+    cantidad: 7,
+    imagen: "https://m.media-amazon.com/images/I/41u56oIkN-L._AC_UF894,1000_QL80_FMwebp_.jpg",
+    },
+    {
+    nombre: "Maleta Inteligente con Seguimiento GPS",
+    descripcion: "Maleta que te permite saber dónde está en todo momento.",
+    precio: 189.99,
+    cantidad: 13,
+    imagen: "https://www.petagadget.com/wp-content/uploads/2015/11/743395429676223526_d47955f014b1.jpg",
+    },
+    {
+    nombre: "Cargador Solar Portátil para Laptop",
+    descripcion: "Cargador que te permite cargar tu laptop en cualquier lugar.",
+    precio: 139.99,
+    cantidad: 17,
+    imagen: "https://m.media-amazon.com/images/I/71A0AqmLAqL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Teclado Virtual Proyectado",
+    descripcion: "Teclado que se proyecta en cualquier superficie.",
+    precio: 99.99,
+    cantidad: 22,
+    imagen: "https://m.media-amazon.com/images/I/51wvjphCqiL._AC_SL1000_.jpg",
+    },
+    {
+    nombre: "Ratón Ergonómico con Escáner",
+    descripcion: "Ratón que escanea documentos y los convierte en texto.",
+    precio: 79.99,
+    cantidad: 28,
+    imagen: "https://thumb.pccomponentes.com/w-530-530/articles/24/240844/1973-trust-verto-raton-inalambrico-ergonomico-1600dpi-comprar.jpg",
+    },
+    {
+    nombre: "Libreta Inteligente con Digitalización",
+    descripcion: "Libreta que digitaliza tus notas y dibujos.",
+    precio: 69.99,
+    cantidad: 32,
+    imagen: "https://openrevista.com/wp-content/uploads/2023/08/cuadernos-inteligentes-precio.jpeg",
+    },
+    {
+    nombre: "Traductor de Idiomas de Bolsillo",
+    descripcion: "Dispositivo que traduce idiomas en tiempo real.",
+    precio: 149.99,
+    cantidad: 10,
+    imagen: "https://m.media-amazon.com/images/I/6104LZmSGYL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Medidor de Calidad del Aire Portátil",
+    descripcion: "Dispositivo que mide la calidad del aire y te alerta.",
+    precio: 89.99,
+    cantidad: 15,
+    imagen: "https://www.poolaria.com/20863-thickbox_default/medidor-co2-calidad-aire-kimo-aq100.jpg",
+    },
+    {
+    nombre: "Báscula Inteligente con Análisis Corporal",
+    descripcion: "Báscula que analiza tu composición corporal y te da consejos.",
+    precio: 129.99,
+    cantidad: 20,
+    imagen: "https://m.media-amazon.com/images/I/61uOk3CIlTL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Dispensador de Comida Inteligente para Mascotas",
+    descripcion: "Dispositivo que alimenta a tu mascota automáticamente.",
+    precio: 169.99,
+    cantidad: 11,
+    imagen: "https://m.media-amazon.com/images/I/612XXfA0tFL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Termómetro Inteligente sin Contacto",
+    descripcion: "Termómetro que mide la temperatura sin tocar la piel.",
+    precio: 59.99,
+    cantidad: 25,
+    imagen: "https://m.media-amazon.com/images/I/61gGxbCS0GL._AC_SL1500_.jpg",
+    },
+    {
+    nombre: "Kit de Primeros Auxilios Inteligente",
+    descripcion: "Kit que te guía en caso de emergencia.",
+    precio: 79.99,
+    cantidad: 28,
+    imagen: "https://m.media-amazon.com/images/I/61dyql8CW-L._AC_.jpg",
+    },
+    {
+    nombre: "Candado Inteligente con Huella Dactilar",
+    descripcion: "Candado que se abre con tu huella dactilar.",
+    precio: 49.99,
+    cantidad: 30,
+    imagen: "https://m.media-amazon.com/images/I/71GNf9+bK1L._AC_SL1500_.jpg",
+    },
+];
+</script>
+
+<script>
+
+            const contenedorProductos = document.getElementById('contenedor-productos');
+            contenedorProductos.style.display = 'grid';
+            contenedorProductos.style.gridTemplateColumns = 'repeat(3, 1fr)'; 
+            contenedorProductos.style.gap = '20px'; 
+
+
+
+            productos.forEach(producto => {
+                const productoDiv = document.createElement("div");
+                productoDiv.className = "producto"; 
+        
+                productoDiv.innerHTML = `
+                    <div>
+                        <img src="${producto.imagen}" style="width: 100%; height: 200px; border-radius: 5px; ">  
+                        <h2 class="producto-nombre" style="font-size: 24px;">${producto.nombre}</h2>
+                        <h3 class="producto-descripcion">${producto.descripcion}</h3>
+                        <div class="producto-precio-carrito"> 
+                            <span class="producto-precio">$${producto.precio.toFixed(2)}</span>
+                            <button class="producto-boton" onclick="removeProduct(this)">Eliminar</button>
+                        </div>
+                    </div>
+                `;
+                
+                
+                contenedorProductos.appendChild(productoDiv);
+            })
+            
+            function removeProduct(button) {
+    const productDiv = button.parentElement.parentElement;
+    productDiv.remove();}
+    
+                        </script>
+                </div>
+            </section>
+        </body>
+    </html>

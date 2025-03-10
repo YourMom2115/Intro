@@ -1,0 +1,41 @@
+body {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+}
+
+h1{
+   text-align: center;
+}
+
+div.hijo{
+   background-color: #8fa080; /*rgb(196, 100, 200);*/
+   width: 200px;
+   height: 250px;
+   border: 2px solid;
+}
+
+div.center{
+   text-align: center;
+}
+
+div.izq{
+   text-align: left;
+}
+
+.container {
+  width: 300px;
+  min-height: 250px;
+  margin: auto;
+  background: indigo;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+  align-content: center;
+}
+
+.btn1{
+   background-color: #4dbce9;
+}
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../styles/styleform.css"
+</head>
+<body>
+    <div class="wrapper">   
+        <form id="Formulario">
+            <h1>Por favor, llene el formulario.</h1>
+
+            <div class="input-box">
+                <label>¿Tiene alguna experiencia laboral?</label><br>
+                <input type="radio" id="experienceYes" name="experience" value="si">
+                <label for="experienceYes">Sí</label><br>
+                <input type="radio" id="experienceNo" name="experience" value="no">
+                <label for="experienceNo">No</label>
+            </div>
+    
+            <div class="input-box">
+                <label>¿Aceptará Visa como pago?</label><br>
+                <input type="radio" id="visaYes" name="visa" value="si">
+                <label for="visaYes">Sí</label><br>
+                <input type="radio" id="visaNo" name="visa" value="no">
+                <label for="visaNo">No</label>
+            </div>
+    
+            <div class="input-box">
+                <label>¿Envíos en persona o por ZOOM?</label><br>
+                <input type="radio" id="inPerson" name="delivery" value="en_persona">
+                <label for="inPerson">En persona</label><br>
+                <input type="radio" id="zoom" name="delivery" value="por_zoom">
+                <label for="zoom">Por ZOOM</label><br>
+                <input type="radio" id="both" name="delivery" value="ambos">
+                <label for="both">Ambos</label>
+            </div>
+    
+            <button id="vender" class="btn">Cambiar</button>
+            
+        </form>
+        <script src="../scripts/scriptform.js"></script>
+    </body>
+    </html
