@@ -18,7 +18,7 @@ button{
 }
 
 button:hover{
-    background-color: rgb(0, 0, 0);  /*Lo dejo en negro o ne?*/
+    background-color: rgb(0, 0, 0);  
 }
 
 .container{
@@ -31,7 +31,7 @@ header{
     
 }
 
-header .logo{  /*le dejo el nombre d la tienda o le pongo el logo?*/
+header .logo{  
     margin: 0;
     padding: 25px 30px;
     font-weight: bold;
@@ -256,7 +256,7 @@ font-size: 1em;
 }
 
 .search-button:hover {
-background-color: rgb(0, 0, 0); /* mouse */
+background-color: rgb(0, 0, 0); 
 }
 
 
