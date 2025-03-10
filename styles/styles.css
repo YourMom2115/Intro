@@ -16,7 +16,6 @@ body{
     width: 350px;
     background: transparent;
     border:50px solid rgba(0, 0, 0, 0.2);
-    /*pa hacer q se vea ovalado el cuadro: border-radius: 30px; ns si dejarlo o ne (PREGUNTAR A MAR) */
     color: #000000;
     backdrop-filter: blur(5px);
     padding: 30px 30px;
@@ -28,7 +27,7 @@ body{
   }
   
   
-  .wrapper .input-box{ /*Tamaño y margen del user y password*/
+  .wrapper .input-box{
     position: relative;
     width: 100%;
     height: 25px;
